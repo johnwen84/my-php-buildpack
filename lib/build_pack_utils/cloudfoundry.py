@@ -192,6 +192,9 @@ class CloudFoundryInstaller(object):
         fileName = urlparse(url).path.split('/')[-1]
         fileToInstall = os.path.join(self._ctx['TMPDIR'], fileName)
 
+        print "_install_binary_from_manifest. url=%s" % url
+        print "_install_binary_from_manifest. fileName=%s" % fileName
+
         if extract:
             return self._unzipUtil.extract(fileToInstall,
                     installDir,
