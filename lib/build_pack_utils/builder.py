@@ -179,7 +179,6 @@ class Installer(object):
         self._installer = CloudFoundryInstaller(self.builder._ctx)
 
     def package(self, key):
-        print "package=%s" % key
         if key in self.builder._ctx.keys():
             key = self.builder._ctx[key]
         self.builder._ctx['%s_INSTALL_PATH' % key] = \
@@ -312,6 +311,7 @@ class ModuleInstaller(object):
                               self._moduleKey.lower())
         strip = self._ctx.get('%s_MODULES_STRIP' % self._moduleKey, False)
         for module in set(self._modules):
+            print "installing module=%s" % module
             try:
                 self._ctx['MODULE_NAME'] = module
                 url = self._ctx['%s_MODULES_PATTERN' % self._moduleKey]
