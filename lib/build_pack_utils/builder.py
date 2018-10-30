@@ -77,7 +77,6 @@ class Configurer(object):
         return self
 
     def done(self):
-        print "done1"
         return self.builder
 
     def _merge(self, ctx):
@@ -163,7 +162,6 @@ class Detecter(object):
         # calls to sys.exit are expected here and needed to
         #  conform to the requirements of CF's detect script
         #  which must set exit codes
-        print "done2"
         if self._detecter and self._detecter.search(self._root):
             print self._output
             sys.exit(0)
@@ -224,7 +222,6 @@ class Installer(object):
         return BuildPackManager(self)
 
     def done(self):
-        print "done3"
         return self.builder
 
 
@@ -240,10 +237,10 @@ class Register(object):
         return self._builder._extn_reg
 
     def done(self):
-        print "done4."
         def process(resp):
             pass  # ignore result, don't care
         for extn in self._builder._extn_reg._paths:
+            print "done4. extn=" % extn
             process_extension(extn, self._builder._ctx, 'configure', process)
         return self._builder
 
@@ -311,7 +308,6 @@ class ModuleInstaller(object):
         return self
 
     def done(self):
-        print "done5."
         toPath = os.path.join(self._ctx['BUILD_DIR'],
                               self._moduleKey.lower())
         strip = self._ctx.get('%s_MODULES_STRIP' % self._moduleKey, False)
@@ -392,7 +388,6 @@ class ConfigInstaller(object):
                      delim=self._delimiter)
 
     def done(self):
-        print "done6"
         if (self._bp_path or self._app_path) and self._to_path:
             if self._bp_path:
                 self._cfInst.install_from_build_pack(self._bp_path,
@@ -418,7 +413,6 @@ class Runner(object):
         self._log = _log
 
     def done(self):
-        print "done7"
         if os.path.exists(self._path):
             cwd = os.getcwd()
             try:
@@ -618,7 +612,6 @@ class FileUtil(object):
             shutil.copy(src, dest)
 
     def done(self):
-        print "done8"
         if self._from_path and self._into_path:
             self._log.debug('Copying files from [%s] to [%s]',
                             self._from_path, self._into_path)
@@ -759,7 +752,6 @@ class ScriptCommandBuilder(object):
         return ScriptCommandBuilder(self._builder, self)
 
     def done(self):
-        print "done9"
         cmd = []
         if self._command:
             cmd.append(self._command)
@@ -846,7 +838,6 @@ class BuildPackManager(object):
         self._bp._stream = stream
 
     def done(self):
-        print "done10"
         if self._bp:
             self._bp._clone()
             self._bp._compile()
@@ -899,7 +890,6 @@ class SaveBuilder(object):
         return self
 
     def done(self):
-        print "done11"
         return self._builder
 
 
