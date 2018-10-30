@@ -199,6 +199,7 @@ dependencies:
   - sysvsem
   - sysvshm
   - twig
+  - tidy
   - xcache
   - xdebug
   - xhprof
@@ -277,6 +278,7 @@ dependencies:
   - sysvsem
   - sysvshm
   - twig
+  - tidy
   - xcache
   - xdebug
   - xhprof
