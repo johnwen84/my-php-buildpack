@@ -240,7 +240,7 @@ class Register(object):
         def process(resp):
             pass  # ignore result, don't care
         for extn in self._builder._extn_reg._paths:
-            print "done4. extn=" % extn
+            print "done4. extn=%s" % extn
             process_extension(extn, self._builder._ctx, 'configure', process)
         return self._builder
 
