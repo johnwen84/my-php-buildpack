@@ -973,7 +973,7 @@ dependencies:
   - zlib
 - name: php
   version: 7.2.11
-  uri: https://wta-php-bundle.mybluemix.net/php-bundle
+  uri: https://wta-php-bundle.mybluemix.net/php-7.2.11-linux-x64.tgz
   sha256: 8b836bbf68927b31527f185ed205e38e47643e2bd36fdd4cf2f262fd0893dd91
   cf_stacks:
   - cflinuxfs2
@@ -1041,7 +1041,7 @@ dependencies:
   - zlib
 - name: php
   version: 7.2.11
-  uri: https://wta-php-bundle.mybluemix.net/php-bundle
+  uri: https://wta-php-bundle.mybluemix.net/php-7.2.11-linux-x64.tgz
   sha256: 8b836bbf68927b31527f185ed205e38e47643e2bd36fdd4cf2f262fd0893dd91
   cf_stacks:
   - cflinuxfs3
