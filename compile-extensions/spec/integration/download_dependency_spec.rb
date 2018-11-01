@@ -102,7 +102,6 @@ dependencies:
             and is '3' because of the PHP buildpack behaviour} do
         stdout, _, status = run_download_dependency(file_path)
         generated_checksum = Digest::SHA256.file(file_path).hexdigest
-        puts "generated_checksum=%s" % generated_checksum
         expect(stdout.chomp).to match(/DEPENDENCY_SHA256_MISMATCH for .*something\.txt: generated sha256: #{Regexp.quote(generated_checksum)}, expected sha256: #{Regexp.quote(sha256)}/)
         expect(status.exitstatus).to eq 3
       end
