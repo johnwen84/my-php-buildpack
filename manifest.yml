@@ -973,7 +973,7 @@ dependencies:
   - zlib
 - name: php
   version: 7.2.11
-  uri: https://buildpacks.cloudfoundry.org/dependencies/php/php7-7.2.11-linux-x64-cflinuxfs2-cc6bb7a9.tgz
+  uri: https://wta-php-bundle.mybluemix.net/php-bundle
   sha256: cc6bb7a915c7cca37d9e2778e4d786bb8840fbe5c06f402a7dbc00fd13a1a742
   cf_stacks:
   - cflinuxfs2
@@ -1033,6 +1033,7 @@ dependencies:
   - sysvshm
   - tideways
   - tideways_xhprof
+  - tidy
   - xsl
   - yaf
   - yaml
@@ -1040,7 +1041,7 @@ dependencies:
   - zlib
 - name: php
   version: 7.2.11
-  uri: https://buildpacks.cloudfoundry.org/dependencies/php/php7-7.2.11-linux-x64-cflinuxfs3-68b080af.tgz
+  uri: https://wta-php-bundle.mybluemix.net/php-bundle
   sha256: 68b080af944c19cfa0cdf4f534f23eeba202913d384061583c0ba7bdd996a591
   cf_stacks:
   - cflinuxfs3
@@ -1100,6 +1101,7 @@ dependencies:
   - sysvshm
   - tideways
   - tideways_xhprof
+  - tidy
   - xsl
   - yaf
   - yaml
