@@ -38,6 +38,7 @@ class Downloader(object):
             raise RuntimeError("Could not download dependency: %s" % url)
         elif exit_code == 3:
             print "Checksum error, failed to download [%s] to [%s]" % (url, toFile)
+            print "Checksum error, failed to download [%s] to [%s]" % (translated_uri, toFile)
             raise RuntimeError("Checksum of downloaded dependency does not match expected value")
 
         _, patch_warning = compile_exts.warn_if_newer_patch(url)
